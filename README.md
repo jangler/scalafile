@@ -1,4 +1,4 @@
-# scalafiles
+# scalafile
 
 [V](https://vlang.io) library for reading and writing
 [Scala](http://www.huygens-fokker.org/scala/)
