@@ -11,18 +11,18 @@ pub mut:
 	notes       []Ratio
 }
 
-// ReadState is used to track the stage of reading a .scl file.
-enum ReadState {
+// ScaleReadState is used to track the stage of reading a .scl file.
+enum ScaleReadState {
 	description
 	count
 	notes
 }
 
-// read_scale reads a Scale from .scl-formatted text.
-pub fn read_scale(text string) ?Scale {
+// read_scl reads a Scale from .scl-formatted text.
+pub fn read_scl(text string) ?Scale {
 	mut s := Scale{}
 	mut nremaining := 0
-	mut state := ReadState.description
+	mut state := ScaleReadState.description
 	for i, line in text.split_into_lines() {
 		if line.starts_with('!') {
 			if i == 0 && line.len > 1 {
